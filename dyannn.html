@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>:)))))</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pacifico', cursive;
+            background: linear-gradient(to bottom, #c9d6ff, #e2e2e2);
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        h1 {
+            color: #3f51b5;
+            font-size: 4em;
+            margin-top: 100px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        p {
+            font-size: 2em;
+            color: #333;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            font-size: 1.3em;
+            margin: 20px;
+            border: none;
+            border-radius: 50px;
+            background-color: #3f51b5;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #5c6bc0;
+            transform: scale(1.1);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Snowflake animation */
+        
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #fff;
+            font-size: 1.5em;
+            user-select: none;
+            animation: fall linear infinite;
+            z-index: 9999;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>t thich m</h1>
+    <p>m lam nguoi yeu t di ^^</p>
+    <button onclick="yes()">ok</button>
+    <button onclick="no()">khong</button>
+
+    <!-- Nhạc nền -->
+    <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+  </audio>
+
+    <!-- Script xử lý -->
+    <script>
+        function yes() {
+            Swal.fire({
+                title: '=))))))',
+                text: 'ok tốt đó =))',
+                icon: 'success',
+                confirmButtonText: 'heh',
+                background: '#f0f8ff',
+                confirmButtonColor: '#3f51b5'
+            });
+        }
+
+        function no() {
+            Swal.fire({
+                title: 'ke m',
+                text: 't chờ tiếp:))',
+                icon: 'error',
+                confirmButtonText: ':)))',
+                background: '#f0f8ff',
+                confirmButtonColor: '#7986cb'
+            });
+        }
+
+        // Tạo hiệu ứng bông tuyết rơi
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄️';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+            snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000);
+        }
+
+        setInterval(createSnowflake, 200);
+    </script>
+
+</body>
+
+</html>
